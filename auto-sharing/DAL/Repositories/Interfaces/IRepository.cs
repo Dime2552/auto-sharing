@@ -10,9 +10,9 @@ namespace DAL.Repositories.Interfaces
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        IEnumerable<T> Find(Func<T, Boolean> predicate);
+        IEnumerable<T> Find(Func<T, bool> predicate, int pageNumber = 0, int pageSize = 10);
         void Create(T item);
         void Update(T item);
-        void Delete(int Id);
+        void Delete(int id);
     }
 }
