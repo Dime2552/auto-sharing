@@ -23,7 +23,7 @@ namespace DAL.EF
             db = new AutoSharingContext (options);
         }
 
-        public IRepository<User> Users
+        public IUserRepository Users
         {
             get
             {
@@ -31,7 +31,7 @@ namespace DAL.EF
                 return userRepository;
             }
         }
-        public IRepository<Car> Cars
+        public ICarRepository Cars
         {
             get
             {
@@ -40,7 +40,7 @@ namespace DAL.EF
                 return carRepository;
             }
         }
-        public IRepository<Reservation> Reservations
+        public IReservationRepository Reservations
         {
             get
             {
