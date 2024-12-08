@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CCL.Security.Identity
 {
-    public abstract class User
+    public class User
     {
-        public User(int id, string name, string password, string userType)
+        public int UserId { get; init; }
+        public List<Role> Roles { get; init; }
+
+        public User(int userId, params Role[] roles)
         {
-            Id = id;
-            Name = name;
-            Password = password;
-            UserType = userType;
+            UserId = userId;
+            Roles = new List<Role>(roles);
         }
-        public int Id { get; }
-        public string Name { get; }
-        public string Password { get; }
-        protected string UserType { get; }
     }
 }
